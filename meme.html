@@ -57,9 +57,9 @@ function showMessage() {
 	document.getElementById("to").value = "";
 	document.getElementById("from").value = "";
 	document.getElementsByClassName("card")[0].style.display = "";
-//	document.getElementsByClassName("btn")[1].style.display = "";
+	document.getElementsByClassName("btn")[1].style.display = "";
 }
-// function showEmail(){
+ function showEmail(){
 	document.getElementsByClassName("btn")[2].style.display = "";
 }
 //This makes enter work
@@ -103,7 +103,7 @@ function getMeme(){
 }
 
 
-document.querySelector('button').addEventListener('click', function() {
+//document.querySelector('button').addEventListener('click', function() {
   html2canvas(document.querySelector('.card'), {
     onrendered: function(canvas) {
       // document.body.appendChild(canvas);
