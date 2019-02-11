@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Valentine's Day Card</title>
+
+	<link href="style.css" rel="stylesheet" text="text/css">
+	<link rel="icon" href="bg.jpg">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+<script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+
+<body background="bg.jpg">
+<h1>Valentine's Day Card</h1>
+<a id="meme-btn" class="btn" href="meme.html" style="min-width: 59px; position: absolute; top: 2px; right:50px">Memes</a>
+
+<div id="card" class="card" style="display: none;">
+	<div class="card-half">
+		<p>Happy Valentine's Day</p>
+		<div style="margin-top: 40px; margin-bottom: 120px;">
+			<h1 style="font-size: 1000%">♥♥♥</h1>
+			<h1 style="font-size: 1000%">♥♥♥</h1>
+		</div>
+	</div>
+	<div class="card-half" style="border-left:0px">
+		<p class="to-from" id="toMsg" style="float: left"></p><br>
+		<p id="msg" style="clear: both;"></p>
+		<p class="to-from" id="fromMsg" style=" position: absolute; bottom: 1000px; right:130px"></p>
+	</div>
+</div>
+<button type="btn button" class="btn" onclick="showEmail()"style="display: none;">Save card</button>
+<a class="center btn" href="mailto:someone@email.com?subject=Valentine's%20Day%20Card&body=Made%20with%20https://chiuannica.github.io/valentinesdaycard/" style="display: none;">Email</a>
+
+<div class="container">
+	<input class="input" type="text" id="to" placeholder="To:">
+	<input class="input" type="text" id="from" placeholder="From:">
+	<input class="input" type="text" id="message" placeholder="Enter a message">
+	<button class="btn" id="msg-btn" onclick="showMessage()">Display Card</button>
+
+</div>
+
+<script>
+var memeImg = document.getElementById("memeImage");
+
+function showMessage() {
+	var message = document.getElementById("message").value;
+	document.getElementById("msg").innerHTML = message;
+	var to = document.getElementById("to").value;
+	document.getElementById("toMsg").innerHTML = "To: " + to;
+	var from = document.getElementById("from").value;
+	document.getElementById("fromMsg").innerHTML = "From: " + from;
+
+	//getMeme(); //NORMAL VERSION with basic sttuff.
+
+	document.getElementById("message").value = "";
+	document.getElementById("to").value = "";
+	document.getElementById("from").value = "";
+	document.getElementsByClassName("card")[0].style.display = "";
+	document.getElementsByClassName("btn")[1].style.display = "";
+}
+ function showEmail(){
+	document.getElementsByClassName("btn")[2].style.display = "";
+}
+
+//This makes enter work
+document.getElementById("message")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {			 //ascii for enter is 13
+        document.getElementById("msg-btn").click();
+    }
+});
+
+//
+var HttpClient = function() {
+    this.get = function(aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function() { 
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
+
+        anHttpRequest.open( "GET", aUrl, true );            
+        anHttpRequest.send( null );
+    }
+}
+
+function getMeme(){
+	var client = new HttpClient();
+
+	client.get('https://api.imgflip.com/get_memes', function(response) {
+	    // do something with the response
+	    let obj = JSON.parse(response); //make the JSON string into a JavaScript object
+	    let randomNum = Math.floor(Math.random() * 100); //random number between 0-100
+	    let randomMeme = obj.data.memes[randomNum]; //get a random meme
+	    // console.log(obj);
+	    // console.log(randomNum);
+	    // console.log(obj.data.memes[randomNum]);
+	    memeImage.src = randomMeme.url;
+	    memeImage.height = 300;
+	    memeImage.width = 350;
+	});
+}
+
+
+document.querySelector('button').addEventListener('click', function() {
+  html2canvas(document.querySelector('.card'), {
+    onrendered: function(canvas) {
+      // document.body.appendChild(canvas);
+      return Canvas2Image.saveAsPNG(canvas);
+    }
+  });
+});
+
+
+</script>
+
+</body>
+</html>
