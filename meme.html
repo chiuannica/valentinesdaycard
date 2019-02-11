@@ -29,7 +29,7 @@
 		<p class="to-from" id="fromMsg" style="float: left"></p>
 	</div>
 </div>
-<button type="btn button" class="btn" <!--onclick="showEmail()"--> style="display: none;">Save card</button>
+<!--<button type="btn button" class="btn" onclick="showEmail()" style="display: none;">Save card</button>-->
 <a class="center btn" href="mailto:someone@email.com?subject=Valentine's%20Day%20Card&body=Made%20with%20https://chiuannica.github.io/valentinesdaycard/" style="display: none;">Email</a>
 
 <div class="container">
@@ -103,7 +103,7 @@ function getMeme(){
 }
 
 
-//document.querySelector('button').addEventListener('click', function() {
+document.querySelector('button').addEventListener('click', function() {
   html2canvas(document.querySelector('.card'), {
     onrendered: function(canvas) {
       // document.body.appendChild(canvas);
