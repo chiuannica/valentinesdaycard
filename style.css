@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Mont';
-  src: url(static/Montserrat-Light.ttf);
+	font-family: 'Mont';
+  	src: url(static/Montserrat-Light.ttf);
 }
 html{
 	font-family: "Mont"
@@ -29,45 +29,45 @@ img{
 }
 
 input[type=text], select {
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #E297AF;
-  border-radius: 4px;
-  box-sizing: border-box;
-  display:flex;
+	width: 50%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #E297AF;
+	border-radius: 4px;
+	box-sizing: border-box;
+	display:flex;
 	margin-left:auto;
 	margin-right:auto;
 }
 textarea:focus, input:focus, input[type]:focus, .btn:focus {   
-    border-color: #E297AF;
-    box-shadow: 0 1px 1px #BD5E7C inset, 0 0 8px #E297AF;
-    outline: 0 none;
+	border-color: #E297AF;
+ 	box-shadow: 0 1px 1px #BD5E7C inset, 0 0 8px #E297AF;
+ 	outline: 0 none;
 }
 a{
     
-    text-align: center;
-    max-width: 46px;
+	text-align: center;
+	max-width: 46px;
 }
 a:hover{
 	background-color: #E297AF ;
 }
 .btn{
 	font-family: Mont;
-  background-color: #BD5E7C;
-  border: none;
-  color: white;
-  padding: 12px 24px;
-  margin:10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  border: 1px solid #BD5E7C;
-  border-radius: 4px;
-  display:flex;
+	background-color: #BD5E7C;
+  	border: none;
+  	color: white;
+ 	padding: 12px 24px;
+	margin:10px;
+ 	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 16px;
+  	cursor: pointer;
+  	border: 1px solid #BD5E7C;
+  	border-radius: 4px;
+  	display:flex;
 	margin-left:auto;
 	margin-right:auto;
 }
