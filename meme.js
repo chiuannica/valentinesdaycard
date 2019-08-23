@@ -9,14 +9,16 @@ function showMessage() {
 	document.getElementById("fromMsg").innerHTML = "From: " + from;
 
 	getMeme();
-//initially empty user input
-	document.getElementById("message").value = "";
-	document.getElementById("to").value = "";
-	document.getElementById("from").value = "";
+
 
 //don't show card or button until after user enters stuff
 	document.getElementsByClassName("card")[0].style.display = "";
 	document.getElementsByClassName("btn")[1].style.display = "";
+}
+function clearInputs(){
+	document.getElementById("message").value = "";
+	document.getElementById("to").value = "";
+	document.getElementById("from").value = "";
 }
 //show email button
 function showEmail(){
@@ -56,8 +58,7 @@ function getMeme(){
 	    // console.log(randomNum);
 	    // console.log(obj.data.memes[randomNum]);
 	    memeImage.src = randomMeme.url;
-	    memeImage.height = 300;
-	    memeImage.width = 350;
+	    
 	});
 }
 

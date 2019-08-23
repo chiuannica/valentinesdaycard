@@ -5,7 +5,7 @@
 	<title>Valentine's Day Card</title>
 
 	<link href="style.css" rel="stylesheet" text="text/css">
-	<link rel="icon" href="bg.jpg">
+	<link rel="icon" href="favicon.png">
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -16,32 +16,32 @@
 
 <body background="bg.jpg">
 <h1>Valentine's Day Card</h1>
-<a id="meme-btn" class="btn" href="meme.html" style="min-width: 59px; position: absolute; top: 2px; right:50px">Memes</a>
+<a class="btn" href="meme.html" style="min-width: 59px; position: absolute; top: 2px; right:50px">Memes</a>
 
 <div id="card" class="card" style="display: none;">
 	<div class="card-half">
 		<p>Happy Valentine's Day</p>
 		<div style="margin-top: 40px; margin-bottom: 120px;">
-			<h1 style="font-size: 1000%">♥♥♥</h1>
-			<h1 style="font-size: 1000%">♥♥♥</h1>
+			<h3>♥♥♥</h3>
+			<h3>♥♥♥</h3>
 		</div>
 	</div>
 	<div class="card-half" style="border-left:0px">
-		<p class="to-from" id="toMsg" style="float: left"></p><br>
+		<p class="to-from" id="toMsg"></p>
+		<p class="to-from" id="fromMsg"></p>
 		<p id="msg" style="clear: both;"></p><br>
-		<p class="to-from" id="fromMsg" style="float: left"></p>
 
 	</div>
 </div>
-<button type="btn button" class="btn" onclick="showEmail()"style="display: none;">Save card</button>
-<a class="center btn" href="mailto:someone@email.com?subject=Valentine's%20Day%20Card&body=Made%20with%20https://chiuannica.github.io/valentinesdaycard/" style="display: none;">Email</a>
+<button class="btn" onclick="showEmail()"style="display: none;">Save card</button>
+<a class="btn" href="mailto:someone@email.com?subject=Valentine's%20Day%20Card&body=Made%20with%20https://chiuannica.github.io/valentinesdaycard/" style="display: none;">Email</a>
 
 <div class="container">
 	<input class="input" type="text" id="to" placeholder="To:">
 	<input class="input" type="text" id="from" placeholder="From:">
 	<input class="input" type="text" id="message" placeholder="Enter a message">
 	<button class="btn" id="msg-btn" onclick="showMessage()">Display Card</button>
-
+	<button class="btn turn-red" onclick="clearInputs()">Clear Inputs</button>
 </div>
 
 <script src="main.js"></script>

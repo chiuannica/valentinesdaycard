@@ -5,7 +5,7 @@
 	<title>Valentine's Day Card</title>
 
 	<link href="style.css" rel="stylesheet" text="text/css">
-	<link rel="icon" href="bg.jpg">
+	<link rel="icon" href="favicon.png">
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -16,6 +16,7 @@
 
 <body background="bg.jpg">
 <h1>Valentine's Day Card</h1>
+<h2>Meme Version</h2>
 <a class="btn" href="index.html" style="min-width: 59px; position: absolute; top: 2px; right:50px">Normal</a>
 
 <div id="card" class="card" style="display: none;">
@@ -24,9 +25,9 @@
 		<img class="center" id="memeImage">
 	</div>
 	<div class="card-half" style="border-left:0px">
-		<p class="to-from" id="toMsg" style="float: left"></p><br>
+		<p class="to-from" id="toMsg"></p>
+		<p class="to-from" id="fromMsg" ></p>
 		<p id="msg" style="clear: both;"></p><br>
-		<p class="to-from" id="fromMsg" style="float: left"></p>
 	</div>
 </div>
 <!--<button type="btn button" class="btn" onclick="showEmail()" style="display: none;">Save card</button>-->
@@ -36,7 +37,9 @@
 	<input class="input" type="text" id="to" placeholder="To:">
 	<input class="input" type="text" id="from" placeholder="From:">
 	<input class="input" type="text" id="message" placeholder="Enter a message">
-	<button class="btn" id="msg-btn" onclick="showMessage()">Display Card</button>
+	<button class="btn" onclick="showMessage()">Display Card</button>
+	<button class="btn turn-red" onclick="clearInputs()">Clear Inputs</button>
+
 
 </div>
 

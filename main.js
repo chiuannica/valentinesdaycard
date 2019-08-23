@@ -9,15 +9,14 @@ function showMessage() {
 	var from = document.getElementById("from").value;
 	document.getElementById("fromMsg").innerHTML = "From: " + from;
 
-	//getMeme(); //no get meme b/c this is normal version
-	//initially empty user input
-	document.getElementById("message").value = "";
-	document.getElementById("to").value = "";
-	document.getElementById("from").value = "";
-
 	//don't show card until user clicks button
 	document.getElementsByClassName("card")[0].style.display = "";
 	document.getElementsByClassName("btn")[1].style.display = "";
+}
+function clearInputs(){
+	document.getElementById("message").value = "";
+	document.getElementById("to").value = "";
+	document.getElementById("from").value = "";
 }
 //email button but this is kind of useless
  function showEmail(){
@@ -33,7 +32,7 @@ document.getElementById("message")
     }
 });
 
-//tbh i don't know what this is
+//make a request
 var HttpClient = function() {
     this.get = function(aUrl, aCallback) {
         var anHttpRequest = new XMLHttpRequest();
@@ -60,8 +59,7 @@ function getMeme(){
 	    // console.log(randomNum);
 	    // console.log(obj.data.memes[randomNum]);
 	    memeImage.src = randomMeme.url;
-	    memeImage.height = 300;
-	    memeImage.width = 350;
+	    
 	});
 }
 
