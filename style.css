@@ -70,7 +70,7 @@ textarea:focus, input:focus, input[type]:focus, .btn:focus {
 	margin-right: auto;
 }
 .btn:hover{
-	background-color: #E297AF;
+	background-color: #e297af;
 }
 .turn-red{
 	background-color: rgb(189, 94, 94);
@@ -108,19 +108,21 @@ canvas{
 	html {
 		font-size: 12pt;
 	}
-	h1{
-		color: yellow;
-	}
 	.card{
 		display: block;
 		padding: 0;
 		border: 1px #BD5E7C solid;
+		min-height: 50vh;
+
 	}
 	.card-half{
 		border: 0;
 	}
 	img{
 		padding: 0
+	}
+	input[type=text]{
+		margin-bottom: 0.5%;
 	}
 		
 }
